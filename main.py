@@ -37,5 +37,5 @@ while running:
                 target_x = random.randint(0, SCREEN_WIDTH - target_width)  #попали ли мы в диапазон цели? (начало координат цели - target_x, а target_x+target_width - правая граница цели, (левая х +ширина цели)
                 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
     screen.blit(target_img, (target_x, target_y)) #отрисуем мишень.с пом спец.ф-ции blit(), и разместим мишень на определенных координатах
-    pygame.display.update()
+    pygame.display.update() #Обновляем экран с новым расположением мишени
 pygame.quit()
