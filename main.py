@@ -21,13 +21,13 @@ target_y = random.randint(0, SCREEN_HEIGHT-target_height)
 color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
         #зададим переменную цвета для заливки фона всего окна игры- рандомные цвета
 
+hit_count = 0 # перем для подсчета попаданий
 
 
 running = True
 while running:
     screen.fill(color) # заполняем окно игры рандомным цветом из переменной color
     for event in pygame.event.get():  #все события в игре сохраняются в виде коллекции(с пом.pygame.event.get()) и цикл for м.эту коллекцию перебрать.
-
                                         #на каждой итерации событие из коллекции сохр-ся в переменную event
         if event.type == pygame.QUIT:
             running = False  #завершаем цикл и мы можем норм выйти из игры. Если это не сделать, игра зависнет при наж на крестик
@@ -36,6 +36,9 @@ while running:
             if target_x < mouse_x < target_x + target_width and target_y < mouse_y < target_y + target_height:
                 target_x = random.randint(0, SCREEN_WIDTH - target_width)  #попали ли мы в диапазон цели? (начало координат цели - target_x, а target_x+target_width - правая граница цели, (левая х +ширина цели)
                 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
+                hit_count += 1  #при попадании увеличиваем счетчик попаданий
+
     screen.blit(target_img, (target_x, target_y)) #отрисуем мишень.с пом спец.ф-ции blit(), и разместим мишень на определенных координатах
     pygame.display.update() #Обновляем экран с новым расположением мишени
+print(f'Количество Ваших попаданий по мишени - {hit_count}')  #Выводим количество попаданий при выходе из игры
 pygame.quit()
