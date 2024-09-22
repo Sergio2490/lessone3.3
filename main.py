@@ -11,9 +11,9 @@ pygame.display.set_caption('Игра Тир')  #set_caption - ф-ция для �
 icon = pygame.image.load("img/Strelki.jpg")
 pygame.display.set_icon(icon)  #Устанавливаем иконку icon-переменная, в которую ранее сохранили картинку
 
-target_img = pygame.image.load('img/target.png')  # в папке img/ будет картинка с целью, пока-пусто
-target_width = 140  #зададим ширину и высоту цели
-target_height = 140
+target_img = pygame.image.load('img/target.png')  # в папке img/ будет картинка с целью, пока-пусто  klipartz.com
+target_width = 80  #зададим ширину и высоту цели
+target_height = 80
 
 target_x = random.randint(0,SCREEN_WIDTH-target_width) # андомная координата лев верх. угла цели
 target_y = random.randint(0, SCREEN_HEIGHT-target_height)
